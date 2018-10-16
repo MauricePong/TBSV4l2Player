@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $(getconf WORD_BIT) = '32' ]&&[ $(getconf LONG_BIT) = '64' ];
+then
+    # echo "64 bit";
+	chmod +x ./bin/tbspushstream_x86_64;
+    ./bin/tbspushstream_x86_64 ;
+else 
+    # echo "32 bit";
+	chmod +x ./bin/tbspushstream_i386;
+   ./bin/tbspushstream_i386 $*;
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $(getconf WORD_BIT) = '32' ]&&[ $(getconf LONG_BIT) = '64' ];
+then
+    # echo "64 bit";
+	chmod +x ./bin/tbsplayer_x86_64;
+    ./bin/tbsplayer_x86_64 ;
+else 
+    # echo "32 bit";
+	chmod +x ./bin/tbsplayer_i386;
+   ./bin/tbsplayer_i386 $*;
+fi
